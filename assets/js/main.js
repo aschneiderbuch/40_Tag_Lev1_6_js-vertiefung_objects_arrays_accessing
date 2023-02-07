@@ -96,21 +96,54 @@ for (let i in myMusic) {
 
 
 // MC
-for(let i in myMusic){
-    if ( myMusic[i].kunstler == "Metallica" ) {
-console.log(myMusic[3].formate[2])
-console.log(myMusic[3]["formate"][2])  
+for (let i in myMusic) {
+    if (myMusic[i].kunstler == "Metallica") {
+        console.log(myMusic[3].formate[2])
+        console.log(myMusic[3]["formate"][2])
     }
 }
 
 // Ride
-for (let i in myMusic){
-    if ( myMusic[i].kunstler == "Metallica"){
+for (let i in myMusic) {
+    if (myMusic[i].kunstler == "Metallica") {
         console.log(myMusic[i].title.length) // 35
         console.log(myMusic[i].title.split(" ")) // macht aus String ein Array
-        console.log(myMusic[i].title.split(" ").find(word => word == "Ride")) //    
-        console.log(myMusic[i].title.search("Ride")) // 10
+        console.log(myMusic[i].title.split(" ").find(word => word == "Ride")) // String mit Ride  
+        console.log(myMusic[i].title.split(" ").findIndex(word => word == "Ride")) // Index 4 
+        console.log(myMusic[i].title.search("Ride")) // 17
+        console.log(findRide = myMusic[i].title.split(" ")[4]) // macht String zu Array und such auf IndexPlatz 4 Ride herraus // Ride
+        console.log(myMusic[i].title.split(" ").filter((e)=> e == "Ride")) // Array mit Ride 
+        // filter macht neues Array nur mit Ride  
+        // Ride = e und wird als ArrowFunction aufgerufen,  
+        // da .filter("Rider") nicht geht weil es einen Callback von einer Funktion erwartet
+        console.log(myMusic[i].title.split(" ").filter((word) => word == "Ride")) // Array mit Ride 
+        console.log(myMusic[i].title.split(" ").filter(word => word == "Ride")) // Array mit Ride 
+        //console.log(myMusic[i].title.split(" ").filter((i) => i== "Ri?e")) // Array  leer [] 
+        console.log(myMusic[i].title.split(" ").filter((i) => i.match(/Ri.e/))) // Array mit Ride 
+        // i.match(/Ri.e/) sucht String im Array mit Ri*e 
+        console.log(myMusic[i].title.split(" ").filter((i) => i.search(/Ride/))) // Array mit Ride 
+
+        console.log(myMusic[i].title.split(" ").filter(e => e == "Ride")) // Array mit Ride 
+        console.log(myMusic[i].title.split(" ").find((word => word == "Ride"))) // String mit Ride  
+        console.log(myMusic[i].title.split(" ").find((word => word == word.match(/Ri.e/)))) // String mit Ride  
 
 
+    }
+}
 
-    }}
+// Zeppelin IV
+let suche = "IV"
+for (let i in myMusic) {
+    if (myMusic[i].kunstler == "Led Zeppelin") {
+console.log(myMusic[i].title.split(" ").filter(i => i == "IV") ) // Array mit IV
+console.log(myMusic[i].title.split(" ").filter(i => i == suche) ) // Array mit IV
+
+   };
+};
+
+// Pink Floyd
+for (let i in myMusic){
+    if (myMusic[i].kunstler == ("Pink Floyd")) {
+    console.log(myMusic[i].kunstler.split(" ").filter((i) => i == "Floyd")) // Array 
+}}
+
